@@ -1,0 +1,25 @@
+:root {
+  /* Paleta Editorial: Violeta, Negro y Blanco */
+  --bg-primary: #0a0a0c; /* Negro profundo de fondo */
+  --bg-secondary: #121118; /* Negro violeta suave para tarjetas */
+  --text-primary: #f4f4f6; /* Blanco roto para máxima legibilidad */
+  --text-muted: #a1a1aa; /* Gris claro para subtítulos */
+
+  /* Acentos Violetas Vibrant & Fresh */
+  --accent-violet: #8b5cf6; /* Violeta eléctrico principal */
+  --accent-violet-light: #c084fc; /* Violeta claro / Neón */
+  --accent-violet-glow: rgba(139, 92, 246, 0.25);
+
+  /* Bordes y Detalles */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-hover: rgba(192, 132, 252, 0.4);
+
+  /* Tipografía */
+  --font-serif:
+    "Playfair Display", Georgia, serif; /* Sabor editorial/artístico */
+  --font-sans:
+    "Plus Jakarta Sans", system-ui, sans-serif; /* Toque fresco y técnico */
+
+  /* Transiciones */
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
