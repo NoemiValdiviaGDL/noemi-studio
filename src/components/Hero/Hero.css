@@ -1,17 +1,28 @@
 /* ==========================================================================
-   HERO SECTION - MOBILE FIRST
+   HERO SECTION - SINGLE COLUMN EDITORIAL FLOW (MOBILE FIRST)
    ========================================================================== */
 
 .hero {
-  padding: 4rem 1.5rem 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 3rem 1.5rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
-/* Badge o Etiqueta de la marca */
+.hero__container {
+  width: 100%;
+  max-width: 800px; /* Limita el ancho para mantener una lectura editorial cómoda */
+  margin: 0 auto;
+}
+
+.hero__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Badge */
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -23,18 +34,17 @@
   color: var(--accent-violet-light);
   font-size: 0.8rem;
   font-weight: 500;
-  width: fit-content;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-/* Título principal con toque editorial */
+/* Título */
 .hero__title {
   font-size: 2.25rem;
   line-height: 1.15;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero__title-highlight {
@@ -44,16 +54,49 @@
   text-shadow: 0 0 20px var(--accent-violet-glow);
 }
 
-/* Subtítulo / Descripción */
-.hero__description {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
+/* Fotografía Intercalada (Estilo Editorial) */
+.hero__media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-/* Botones de Acción (Llamados a la Acción / Funnel CTAs) */
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* Tamaño destacado en el centro */
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%) contrast(105%);
+  transition: var(--transition-smooth);
+}
+
+.hero__image-wrapper:hover .hero__image {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.02);
+}
+
+/* Descripción */
+.hero__description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 720px;
+}
+
+/* Botones */
 .hero__actions {
   display: flex;
   flex-direction: column;
@@ -66,7 +109,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 1.75rem;
+  padding: 0.9rem 1.75rem;
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -100,13 +143,12 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (TABLET Y DESKTOP)
+   MEDIA QUERIES (DESKTOP)
    ========================================================================== */
 
-/* Tablet (768px o más) */
 @media (min-width: 768px) {
   .hero {
-    padding: 6rem 3rem 4rem;
+    padding: 5rem 3rem 4rem;
   }
 
   .hero__title {
@@ -114,12 +156,12 @@
   }
 
   .hero__description {
-    font-size: 1.125rem;
+    font-size: 1.15rem;
   }
 
   .hero__actions {
     flex-direction: row;
-    align-width: auto;
+    width: auto;
   }
 
   .btn {
@@ -127,17 +169,12 @@
   }
 }
 
-/* Desktop (1024px o más) */
 @media (min-width: 1024px) {
   .hero {
-    padding: 8rem 4rem 6rem;
+    padding: 6rem 4rem;
   }
 
   .hero__title {
-    font-size: 4.5rem;
-  }
-
-  .hero__badge {
-    font-size: 0.85rem;
+    font-size: 4.25rem;
   }
 }
