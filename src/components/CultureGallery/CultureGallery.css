@@ -1,0 +1,257 @@
+/* ==========================================================================
+   CULTURE & PHOTOGRAPHY SECTION - MOBILE FIRST
+   ========================================================================== */
+
+.culture {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.culture__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado Editorial */
+.culture__header {
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.culture__tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-violet-light);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.culture__title {
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Cita Filosófica */
+.culture__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--accent-violet-light);
+  border-left: 2px solid var(--accent-violet);
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.culture__quote-author {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Texto Persuasivo */
+.culture__text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.culture__text-highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   GALERÍA MÓVIL: TARJETA ÚNICA EN TRANSICIÓN (CADA 3s)
+   ========================================================================== */
+
+.culture__slider-mobile {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.culture-card-slider {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.culture-card-slider__image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+
+.culture-card-slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.culture-card-slider__content {
+  padding: 1.25rem;
+}
+
+.culture-card-slider__title {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.culture-card-slider__caption {
+  font-size: 0.85rem;
+  color: var(--accent-violet-light);
+}
+
+/* Controles e Indicadores del Slider Móvil */
+.culture-card-slider__dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.dot--active {
+  background-color: var(--accent-violet-light);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   GALERÍA DESKTOP: GRID EDITORIAL (Oculto en Móvil)
+   ========================================================================== */
+
+.culture__grid-desktop {
+  display: none;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.culture-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.culture-card:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-4px);
+}
+
+.culture-card__image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.culture-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.culture-card:hover .culture-card__image {
+  transform: scale(1.05);
+}
+
+.culture-card__content {
+  padding: 1.25rem;
+}
+
+.culture-card__title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.culture-card__subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Enlace a Galería Completa */
+.culture__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.culture__link-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+}
+
+.culture__link-all:hover {
+  border-color: var(--accent-violet-light);
+  background-color: rgba(139, 92, 246, 0.1);
+  color: var(--accent-violet-light);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (DESKTOP)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .culture {
+    padding: 6rem 3rem;
+  }
+
+  .culture__title {
+    font-size: 2.75rem;
+  }
+
+  .culture__quote {
+    font-size: 1.3rem;
+  }
+
+  /* Ocultamos slider móvil y mostramos Grid en pantallas grandes */
+  .culture__slider-mobile {
+    display: none;
+  }
+
+  .culture__grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

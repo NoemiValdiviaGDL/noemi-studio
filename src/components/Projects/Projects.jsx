@@ -57,7 +57,6 @@ export default function Projects() {
         <div className="projects__grid">
           {projectsList.map((project) => (
             <article key={project.id} className="project-card">
-              {/* Al hacer clic en la imagen, abre directo el sitio en vivo */}
               <a
                 href={project.liveUrl}
                 target="_blank"
@@ -86,7 +85,6 @@ export default function Projects() {
                 </ul>
 
                 <div className="project-card__links">
-                  {/* Botón Principal enfocado en Clientes: Ver Sitio Web */}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -99,8 +97,6 @@ export default function Projects() {
                       <ExternalLink size={14} />
                     </a>
                   )}
-
-                  {/* Botón Secundario: Código en GitHub */}
                   {project.githubLink && (
                     <a
                       href={project.githubLink}

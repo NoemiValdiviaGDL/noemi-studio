@@ -2,6 +2,7 @@ import "./styles/global.css";
 import Hero from "./components/Hero/Hero.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Projects from "./components/Projects/Projects.jsx";
+import CultureGallery from "./components/CultureGallery/CultureGallery.jsx";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Hero />
       <Navbar />
       <Projects />
+      <CultureGallery />
     </div>
   );
 }
