@@ -1,8 +1,5 @@
-/* ==========================================================================
-   CULTURE & PHOTOGRAPHY SECTION - MOBILE FIRST
-   ========================================================================== */
-
 .culture {
+  display: flex;
   width: 100%;
   padding: 4rem 1.5rem;
   background-color: var(--bg-secondary);
@@ -37,7 +34,6 @@
   line-height: 1.2;
 }
 
-/* Cita Filosófica */
 .culture__quote {
   font-family: var(--font-serif);
   font-style: italic;
@@ -60,7 +56,6 @@
   text-transform: uppercase;
 }
 
-/* Texto Persuasivo */
 .culture__text {
   font-size: 1.05rem;
   color: var(--text-muted);
@@ -77,17 +72,136 @@
    GALERÍA MÓVIL: TARJETA ÚNICA EN TRANSICIÓN (CADA 3s)
    ========================================================================== */
 
-.culture__slider-mobile {
-  display: block;
-  margin-bottom: 2rem;
+.culture__slider-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
 }
 
 .culture-card-slider {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.culture-card-slider:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(139, 92, 246, 0.15);
+}
+
+.culture-card-slider--paused {
+  border-color: var(--accent-violet-light);
+  box-shadow: 0 0 25px var(--accent-violet-glow);
+}
+
+.culture-card-slider__image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  background-color: #050507;
+}
+
+.culture-card-slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: fadeInZoom 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0.3;
+    transform: scale(1.06);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.culture-card-slider__status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(10, 10, 12, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.culture-card-slider--paused .culture-card-slider__status-badge {
+  background-color: rgba(139, 92, 246, 0.25);
+  border-color: var(--accent-violet-light);
+  color: #ffffff;
+}
+
+.culture-card-slider__content {
+  padding: 1.25rem 1.5rem;
+}
+
+.culture-card-slider__title {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.culture-card-slider__caption {
+  font-size: 0.85rem;
+  color: var(--accent-violet-light);
+}
+
+.culture-card-slider__dots {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dot:hover {
+  background-color: var(--text-muted);
+}
+
+.dot--active {
+  background-color: var(--accent-violet-light);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--accent-violet-glow);
+}
+.culture__slider-mobile {
+  display: block;
+  margin-bottom: 2rem;
 }
 
 .culture-card-slider__image-container {
@@ -121,7 +235,6 @@
   color: var(--accent-violet-light);
 }
 
-/* Controles e Indicadores del Slider Móvil */
 .culture-card-slider__dots {
   display: flex;
   gap: 0.5rem;
@@ -245,7 +358,6 @@
     font-size: 1.3rem;
   }
 
-  /* Ocultamos slider móvil y mostramos Grid en pantallas grandes */
   .culture__slider-mobile {
     display: none;
   }
