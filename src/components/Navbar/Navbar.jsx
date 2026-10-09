@@ -39,6 +39,11 @@ export default function Navbar() {
               </a>
             </li>
             <li>
+              <a href="#paquetes" className="navbar__link">
+                Paquetes
+              </a>
+            </li>
+            <li>
               <a href="#cultura" className="navbar__link" onClick={closeMenu}>
                 Fotografía & Cultura
               </a>

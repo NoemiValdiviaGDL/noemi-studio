@@ -1,0 +1,225 @@
+/* ==========================================================================
+   PACKAGES SECTION - MOBILE FIRST
+   ========================================================================== */
+
+.packages {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.packages__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.packages__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.packages__tag {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-violet-light);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.packages__title {
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.packages__subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grilla de Tarjetas */
+.packages__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Tarjeta individual */
+.package-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.package-card:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Tarjeta Destacada (Plan Intermedio / Más Popular) */
+.package-card--popular {
+  border-color: var(--accent-violet);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
+.package-card__badge {
+  position: absolute;
+  top: -12px;
+  right: 1.5rem;
+  background-color: var(--accent-violet);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px var(--accent-violet-glow);
+}
+
+/* Cabecera de la Tarjeta */
+.package-card__header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.package-card__icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--accent-violet-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.package-card__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+}
+
+.package-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Lista de Características */
+.package-card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.package-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.package-card__feature-icon {
+  color: var(--accent-violet-light);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Enlaces y Acciones */
+.package-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.btn-package {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  width: 100%;
+  text-decoration: none;
+}
+
+.btn-package--primary {
+  background-color: var(--accent-violet);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--accent-violet-glow);
+}
+
+.btn-package--primary:hover {
+  background-color: var(--accent-violet-light);
+  color: #0a0a0c;
+  transform: translateY(-2px);
+}
+
+.btn-package--secondary {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background-color: transparent;
+}
+
+.btn-package--secondary:hover {
+  border-color: var(--accent-violet-light);
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (DESKTOP)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .packages {
+    padding: 6rem 3rem;
+  }
+
+  .packages__title {
+    font-size: 2.75rem;
+  }
+
+  .packages__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  /* Elevar ligeramente la tarjeta destacada en Desktop */
+  .package-card--popular {
+    transform: scale(1.03);
+  }
+
+  .package-card--popular:hover {
+    transform: scale(1.03) translateY(-4px);
+  }
+}

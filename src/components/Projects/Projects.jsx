@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, GitBranch, Globe } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import CinemaPic from "../../images/cinema3-pic.avif";
 import WorldPic from "../../images/mundo3-pic.avif";
 import SaludPic from "../../images/salud1-pic.avif";
@@ -95,18 +95,6 @@ export default function Projects() {
                       <Globe size={16} />
                       <span>Ver Sitio Web</span>
                       <ExternalLink size={14} />
-                    </a>
-                  )}
-                  {project.githubLink && (
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-project btn-project--code"
-                      title="Ver repositorio de código"
-                    >
-                      <GitBranch size={16} />
-                      <span>Código</span>
                     </a>
                   )}
                 </div>

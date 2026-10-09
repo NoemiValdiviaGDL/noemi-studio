@@ -21,74 +21,60 @@ export default function CultureGallery() {
   const allPhotos = [
     {
       id: 1,
-      title: "Composición & Perspectiva",
-      category: "Fotografía Editorial",
       image: PicGallery1,
     },
     {
       id: 2,
-      title: "Geometría Urbana",
-      category: "Exploración Cultural",
       image: PicGallery2,
     },
     {
       id: 3,
-      title: "Luz & Sombra",
-      category: "Dirección Visual",
+
       image: PicGallery3,
     },
     {
       id: 4,
-      title: "Geometría & Texturas",
-      category: "Dirección Visual",
+
       image: PicGallery4,
     },
     {
       id: 5,
-      title: "Ritmo Urbano",
-      category: "Dirección Visual",
+
       image: PicGallery5,
     },
     {
       id: 6,
-      title: "Encuadres de Autor",
-      category: "Dirección Visual",
+
       image: PicGallery6,
     },
     {
       id: 7,
-      title: "Perspectivas Mínimas",
-      category: "Dirección Visual",
+
       image: PicGallery7,
     },
     {
       id: 8,
-      title: "Contrastes & Luces",
-      category: "Dirección Visual",
+
       image: PicGallery8,
     },
     {
       id: 9,
-      title: "Sombra & Estructura",
-      category: "Dirección Visual",
+
       image: PicGallery9,
     },
     {
       id: 10,
-      title: "Geometría Cotidiana",
-      category: "Dirección Visual",
+
       image: PicGallery10,
     },
     {
       id: 11,
-      title: "Narrativas Visuales",
-      category: "Dirección Visual",
+
       image: PicGallery11,
     },
     {
       id: 12,
-      title: "Cultura & Forma",
-      category: "Dirección Visual",
+
       image: PicGallery12,
     },
   ];
@@ -165,21 +151,12 @@ export default function CultureGallery() {
               <img
                 key={currentIndex}
                 src={featuredPhotos[currentIndex].image}
-                alt={featuredPhotos[currentIndex].title}
                 className="culture-card-slider__image"
               />
               <div className="culture-card-slider__status-badge">
                 {isPaused ? <Pause size={14} /> : <Play size={14} />}
                 <span>{isPaused ? "Pausado" : "Auto"}</span>
               </div>
-            </div>
-            <div className="culture-card-slider__content">
-              <h3 className="culture-card-slider__title">
-                {featuredPhotos[currentIndex].title}
-              </h3>
-              <p className="culture-card-slider__caption">
-                {featuredPhotos[currentIndex].category}
-              </p>
             </div>
           </div>
 

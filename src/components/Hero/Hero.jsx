@@ -36,17 +36,6 @@ export default function Hero() {
             exploración cultural para construir landings y aplicaciones que
             cautivan y solucionan problemas de manera creativa y profesional.
           </p>
-
-          <div className="hero__actions">
-            <a href="#contacto" className="btn btn--primary">
-              <span>Iniciar Proyecto</span>
-              <ArrowUpRight size={18} />
-            </a>
-            <a href="#proyectos" className="btn btn--secondary">
-              <Code2 size={18} />
-              <span>Ver Trabajos</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
