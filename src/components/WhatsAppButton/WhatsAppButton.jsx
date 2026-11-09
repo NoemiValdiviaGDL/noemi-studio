@@ -1,6 +1,6 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
-import "./whatsAppButton.css";
+import "./WhatsAppButton.css";
 
 export default function WhatsAppButton() {
   // Reemplaza por tu número de teléfono con código de país (ej. México +52)
