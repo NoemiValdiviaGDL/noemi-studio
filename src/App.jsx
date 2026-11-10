@@ -1,21 +1,15 @@
-import "./styles/global.css";
-import Hero from "./components/Hero/Hero.jsx";
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Projects from "./components/Projects/Projects.jsx";
-import CultureGallery from "./components/CultureGallery/CultureGallery.jsx";
-import Packages from "./components/Packages/Packages.jsx";
-import Contact from "./components/Contact/Contact.jsx";
-import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton.jsx";
-export default function App() {
+import React from "react";
+import { Hero } from "./components/Hero";
+import { ServicesGallery } from "./components/ServicesGallery";
+import { Packages } from "./components/Packages";
+function App() {
   return (
-    <div className="app-container">
+    <main className="bg-[#0b071a] min-h-screen text-white selection:bg-[#A11DA0] selection:text-white">
       <Hero />
-      <Navbar />
-      <Projects />
+      <ServicesGallery />
       <Packages />
-      <CultureGallery />
-      <Contact />
-      <WhatsAppButton />
-    </div>
+    </main>
   );
 }
+
+export default App;
