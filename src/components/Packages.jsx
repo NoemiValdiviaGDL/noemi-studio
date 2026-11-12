@@ -24,7 +24,7 @@ const packagesData = [
     currency: "MXN",
     badge: "Básico",
     image: imgPediatria,
-    vercelUrl: "https://noemivaldiviagdl.github.io/salud-landing/", // Cambia por tu link real de Vercel
+    vercelUrl: "https://salud-landing.vercel.app/", // Cambia por tu link real de Vercel
     features: [
       "Llamados a la acción directos (WhatsApp y llamadas)",
       'Sección elegante "Sobre mí / Trayectoria"',
