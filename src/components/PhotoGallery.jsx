@@ -15,7 +15,6 @@ import gal4 from "../assets/images/gallery-4.avif";
 import gal5 from "../assets/images/gallery-5.avif";
 import gal6 from "../assets/images/gallery-6.avif";
 import gal7 from "../assets/images/gallery-7.avif";
-import gal8 from "../assets/images/gallery-8.avif";
 import gal9 from "../assets/images/gallery-9.avif";
 import gal10 from "../assets/images/gallery-10.avif";
 import gal11 from "../assets/images/gallery-11.avif";
