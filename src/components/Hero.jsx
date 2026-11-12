@@ -1,6 +1,6 @@
 import React from "react";
 import { Sparkles, ArrowRight, Code2, Play } from "lucide-react";
-import perfilImg from "../assets/images/perfil-1.avif";
+import perfilImg from "../assets/images/hero.avif";
 
 export const Hero = () => {
   return (

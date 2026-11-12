@@ -9,8 +9,8 @@ import {
 } from "lucide-react";
 
 // Importación de tus imágenes atmosféricas
-import Perfil2 from "../assets/images/perfil-2.jpg";
-import Perfil3 from "../assets/images/perfil-3.jpg";
+import Perfil2 from "../assets/images/perfil2.jpg";
+import Perfil3 from "../assets/images/perfil3.jpg";
 
 const pillars = [
   {
