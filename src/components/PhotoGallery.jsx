@@ -250,7 +250,7 @@ export const PhotoGallery = () => {
           {/* Botón Directo a WhatsApp */}
           <div className="shrink-0 relative z-10 w-full sm:w-auto">
             <a
-              href="https://wa.me/3327825329?text=Hola%20Noemi%2C%20me%20interesa%20un%20paquete%20para%20mi%20p%C3%A1gina%20web%20y%20quiero%20aprovechar%20el%20descuento%20especial%20en%20la%20toma%20de%20fotograf%C3%ADas%20para%20mi%20proyecto."
+              href="https://wa.me/5213327825329?text=Hola%20Noemi%2C%20me%20interesa%20un%20paquete%20para%20mi%20p%C3%A1gina%20web%20y%20quiero%20aprovechar%20el%20descuento%20especial%20en%20la%20toma%20de%20fotograf%C3%ADas%20para%20mi%20proyecto."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#A11DA0] via-[#761DA1] to-[#4B1DA1] hover:shadow-[0_0_30px_rgba(161,29,160,0.7)] transition-all duration-300 transform hover:-translate-y-0.5"
