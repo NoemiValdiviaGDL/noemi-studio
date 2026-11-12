@@ -10,7 +10,7 @@ import {
 
 // Importación de tus imágenes atmosféricas
 import Perfil2 from "../assets/images/perfil-2.jpg";
-import Perfil3 from "../assets/images/perfil-3.JPG";
+import Perfil3 from "../assets/images/perfil-3.jpg";
 
 const pillars = [
   {
