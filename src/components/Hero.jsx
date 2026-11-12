@@ -41,15 +41,20 @@ export const Hero = () => {
           {/* Subtítulo / Propuesta de Valor */}
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
             Hola, soy{" "}
-            <strong className="text-white font-semibold">Noemi Valdivia</strong>
-            . Diseño y desarrollo aplicaciones y sitios web cinematográficos,
-            optimizados estratégicamente para convertir visitantes en clientes.
+            <strong className="text-white font-semibold">
+              Noemi Valdivia{" "}
+            </strong>
+            Desarrolladora Web y Fotógrafa. Desarrollo sitios web dinámicos,
+            elegantes y llenos de color, optimizados estratégicamente para
+            convertir visitantes en clientes.
           </p>
 
           {/* Llamados a la Acción (CTA) */}
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
             <a
-              href="#contacto"
+              href="https://wa.me/5213300000000?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20agendar%20un%20proyecto%20para%20mi%20p%C3%A1gina%20web."
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-[#761DA1] via-[#4B1DA1] to-[#1D44A1] hover:shadow-[0_0_30px_rgba(118,29,161,0.5)] transition-all duration-300 transform hover:-translate-y-0.5"
             >
               <span>Agendar Proyecto</span>
@@ -57,7 +62,7 @@ export const Hero = () => {
             </a>
 
             <a
-              href="#portafolio"
+              href="#proyectos-disponibles"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-gray-200 border border-white/15 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
               <Play size={16} className="text-[#A11DA0]" />

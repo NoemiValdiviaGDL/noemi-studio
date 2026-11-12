@@ -14,7 +14,7 @@ import gal2 from "../assets/images/services-2.jpg";
 import gal3 from "../assets/images/services-3.jpg";
 import gal4 from "../assets/images/services-4.jpg";
 import gal5 from "../assets/images/services-5.jpg";
-
+import gal6 from "../assets/images/services-6.jpg";
 const includesList = [
   {
     title: "Se ve perfecta en celulares y computadoras",
@@ -54,6 +54,7 @@ const galleryImages = [
   { id: 3, img: gal3, tag: "Formularios de Contacto" },
   { id: 4, img: gal4, tag: "Galería de Productos / Trabajos" },
   { id: 5, img: gal5, tag: "Agenda de Citas en Línea" },
+  { id: 6, img: gal6, tag: "Mapa interactivo Google Maps" },
 ];
 
 export const ServicesGallery = () => {
@@ -74,7 +75,10 @@ export const ServicesGallery = () => {
   };
 
   return (
-    <section className="relative py-24 bg-[#0b071a] overflow-hidden">
+    <section
+      id="servicios"
+      className="relative py-24 bg-[#0b071a] overflow-hidden"
+    >
       {/* Luz y resplandor de fondo */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#761DA1] opacity-20 blur-[150px] rounded-full pointer-events-none animate-glow" />
       <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-[#201DA1] opacity-20 blur-[150px] rounded-full pointer-events-none" />
@@ -163,54 +167,57 @@ export const ServicesGallery = () => {
       </div>
 
       {/* Galería Horizontal Deslizable para Capturas Verticales */}
-      <div
-        ref={scrollRef}
-        className="flex gap-8 overflow-x-auto scrollbar-none px-6 sm:px-12 pb-10 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {galleryImages.map((item) => (
-          <div
-            key={item.id}
-            /* ANCHO Y ALTO VERTICAL EXPANDIDO (Ancho: ~320px - 360px | Alto: 600px - 650px) */
-            className="snap-center flex-none w-[300px] sm:w-[340px] rounded-[2.5rem] p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 border border-white/20 hover:border-[#A11DA0] transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative"
-          >
-            {/* Mockup / Marco del Teléfono Celular */}
-            <div className="relative w-full h-[580px] sm:h-[620px] rounded-[2rem] overflow-hidden bg-black border border-white/10">
-              {/* Isla Dinámica / Cámara del Celular (Detalle Visual) */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 border border-white/10 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-purple-900/50 mr-2" />
-              </div>
+      {/* Contenedor alineado al centro con el resto del contenido en Desktop */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
+        {/* Galería Horizontal Deslizable */}
+        <div
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scrollbar-none pb-10 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {galleryImages.map((item) => (
+            <div
+              key={item.id}
+              className="snap-start flex-none w-[300px] sm:w-[340px] rounded-[2.5rem] p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 border border-white/20 hover:border-[#A11DA0] transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative"
+            >
+              {/* Mockup / Marco del Teléfono Celular */}
+              <div className="relative w-full h-[580px] sm:h-[620px] rounded-[2rem] overflow-hidden bg-black border border-white/10">
+                {/* Isla Dinámica / Cámara del Celular */}
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 border border-white/10 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-purple-900/50 mr-2" />
+                </div>
 
-              {/* Imagen Vertical Completa */}
-              <img
-                src={item.img}
-                alt={item.tag}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
+                {/* Imagen Vertical Completa */}
+                <img
+                  src={item.img}
+                  alt={item.tag}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
 
-              {/* Sombra y Overlay Cinematográfico Inferior */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b071a] via-transparent to-transparent opacity-90 z-10" />
+                {/* Sombra y Overlay Cinematográfico Inferior */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b071a] via-transparent to-transparent opacity-90 z-10" />
 
-              {/* Etiqueta / Descripción Flotante en la parte inferior de la captura */}
-              <div className="absolute bottom-4 left-4 right-4 z-20 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-center">
-                <p className="text-xs font-semibold text-purple-200 tracking-wide">
-                  {item.tag}
-                </p>
+                {/* Etiqueta / Descripción Flotante */}
+                <div className="absolute bottom-4 left-4 right-4 z-20 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-center">
+                  <p className="text-xs font-semibold text-purple-200 tracking-wide">
+                    {item.tag}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Llamado a la Acción al final del carrusel */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 mt-8 text-center">
-        <a
-          href="#contacto"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-[#761DA1] via-[#4B1DA1] to-[#1D44A1] hover:shadow-[0_0_35px_rgba(161,29,160,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
-        >
-          <span>Quiero una página así para mi negocio</span>
-          <ArrowRight size={18} />
-        </a>
+        {/* Llamado a la Acción al final del carrusel */}
+        <div className="mt-8 text-center">
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-[#761DA1] via-[#4B1DA1] to-[#1D44A1] hover:shadow-[0_0_35px_rgba(161,29,160,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
+          >
+            <span>Quiero una página así para mi negocio</span>
+            <ArrowRight size={18} />
+          </a>
+        </div>
       </div>
     </section>
   );
