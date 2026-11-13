@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   Sparkles,
   ChevronLeft,
@@ -6,6 +6,8 @@ import {
   CheckCircle2,
   ArrowRight,
   Smartphone,
+  Maximize2,
+  X,
 } from "lucide-react";
 
 // Importación de tus capturas de pantalla / galería
@@ -15,6 +17,7 @@ import gal3 from "../assets/images/services-3.jpg";
 import gal4 from "../assets/images/services-4.jpg";
 import gal5 from "../assets/images/services-5.jpg";
 import gal6 from "../assets/images/services-6.jpg";
+
 const includesList = [
   {
     title: "Se ve perfecta en celulares y computadoras",
@@ -51,13 +54,14 @@ const includesList = [
 const galleryImages = [
   { id: 1, img: gal1, tag: "Diseño para Celulares" },
   { id: 2, img: gal2, tag: "Botones Directos a WhatsApp" },
-  { id: 3, img: gal3, tag: "Formularios de Contacto" },
+  { id: 3, img: gal3, tag: "Calendario conectado a tu Google Calendar" },
   { id: 4, img: gal4, tag: "Galería de Productos / Trabajos" },
-  { id: 5, img: gal5, tag: "Agenda de Citas en Línea" },
+  { id: 5, img: gal5, tag: "Reseñas reales de tus clientes" },
   { id: 6, img: gal6, tag: "Mapa interactivo Google Maps" },
 ];
 
 export const ServicesGallery = () => {
+  const [selectedScreenshot, setSelectedScreenshot] = useState(null);
   const scrollRef = useRef(null);
 
   const handleScroll = (direction) => {
@@ -140,9 +144,11 @@ export const ServicesGallery = () => {
                 en el celular
               </span>
             </h3>
-            <p className="text-gray-400 text-sm mt-1">
-              Desliza para ver la experiencia vertical real de tus futuros
-              clientes.
+            <p className="text-gray-400 text-sm mt-1 flex items-center gap-1.5">
+              <Maximize2 size={14} className="text-[#A11DA0]" />
+              <span>
+                Desliza y haz clic en cualquier pantalla para verla en grande.
+              </span>
             </p>
           </div>
 
@@ -166,7 +172,6 @@ export const ServicesGallery = () => {
         </div>
       </div>
 
-      {/* Galería Horizontal Deslizable para Capturas Verticales */}
       {/* Contenedor alineado al centro con el resto del contenido en Desktop */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
         {/* Galería Horizontal Deslizable */}
@@ -178,13 +183,19 @@ export const ServicesGallery = () => {
           {galleryImages.map((item) => (
             <div
               key={item.id}
-              className="snap-start flex-none w-[300px] sm:w-[340px] rounded-[2.5rem] p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 border border-white/20 hover:border-[#A11DA0] transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative"
+              onClick={() => setSelectedScreenshot(item)}
+              className="snap-start flex-none w-[300px] sm:w-[340px] rounded-[2.5rem] p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 border border-white/20 hover:border-[#A11DA0] transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative cursor-pointer"
             >
               {/* Mockup / Marco del Teléfono Celular */}
               <div className="relative w-full h-[580px] sm:h-[620px] rounded-[2rem] overflow-hidden bg-black border border-white/10">
                 {/* Isla Dinámica / Cámara del Celular */}
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 border border-white/10 flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-purple-900/50 mr-2" />
+                </div>
+
+                {/* Botón flotante indicador de ampliar */}
+                <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white group-hover:bg-[#A11DA0] group-hover:border-[#A11DA0] transition-all duration-300">
+                  <Maximize2 size={15} />
                 </div>
 
                 {/* Imagen Vertical Completa */}
@@ -219,6 +230,57 @@ export const ServicesGallery = () => {
           </a>
         </div>
       </div>
+
+      {/* MODAL PARA VER LA CAPTURA DE PANTALLA AMPLIADA */}
+      {selectedScreenshot && (
+        <div
+          onClick={() => setSelectedScreenshot(null)}
+          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 pt-20 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-md w-full bg-[#0b071a] border border-[#A11DA0]/50 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(161,29,160,0.45)] flex flex-col max-h-[82vh]"
+          >
+            {/* Botón Cerrar */}
+            <button
+              onClick={() => setSelectedScreenshot(null)}
+              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-black/80 hover:bg-[#A11DA0] text-white border border-white/20 transition-colors"
+              aria-label="Cerrar captura"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Contenedor con scroll vertical interno para ver la pantalla completa */}
+            <div className="overflow-y-auto bg-black flex justify-center p-2">
+              <img
+                src={selectedScreenshot.img}
+                alt={selectedScreenshot.tag}
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </div>
+
+            {/* Pie descriptivo dentro del Modal */}
+            <div className="p-4 bg-gradient-to-r from-[#201DA1]/50 via-[#4B1DA1]/40 to-[#0b071a] border-t border-white/10 flex items-center justify-between gap-3 shrink-0">
+              <div>
+                <p className="text-[11px] text-purple-300 uppercase tracking-wider font-semibold">
+                  Diseño Móvil
+                </p>
+                <h4 className="text-sm sm:text-base font-medium text-white">
+                  {selectedScreenshot.tag}
+                </h4>
+              </div>
+              <a
+                href="https://wa.me/5213327825329?text=Hola%20Noemi%2C%20me%20gust%C3%B3%20este%20dise%C3%B1o%20y%20quiero%20cotizar%20mi%20p%C3%A1gina."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full text-xs font-semibold text-white bg-[#A11DA0] hover:bg-[#761DA1] transition-colors shrink-0"
+              >
+                Cotizar
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
