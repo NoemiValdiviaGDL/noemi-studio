@@ -57,13 +57,6 @@ const photoGallery = [
       "Miradas que sostienen el lente con calma, carácter y una presencia imposible de ignorar.",
   },
   {
-    id: 4,
-    img: gal4,
-    title: "Rebeldia y Locura",
-    caption:
-      "La belleza que nace cuando una mujer decide ser la única autora de su historia y su imagen.",
-  },
-  {
     id: 5,
     img: gal5,
     title: "Luz entre sombras",
