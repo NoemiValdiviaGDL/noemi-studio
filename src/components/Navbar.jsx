@@ -25,13 +25,13 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0b071a]/85 backdrop-blur-xl border-b border-white/10 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-          : "bg-transparent py-6"
+          ? "bg-[#0b071a]/90 backdrop-blur-xl border-b border-white/10 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
         {/* Marca / Logo en tipografía cursiva con destello */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" className="flex items-center gap-2 group shrink-0">
           <Sparkles
             size={18}
             className="text-[#A11DA0] group-hover:rotate-45 transition-transform duration-300"
@@ -41,13 +41,13 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* Enlaces en Escritorio */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Enlaces en Escritorio en forma de botoncitos */}
+        <nav className="hidden lg:flex items-center gap-2 p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-light text-gray-300 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A11DA0] hover:after:w-full after:transition-all after:duration-300"
+              className="px-3.5 py-2 rounded-full text-xs xl:text-sm font-medium text-gray-200 bg-white/[0.03] hover:bg-gradient-to-r hover:from-[#A11DA0]/25 hover:to-[#4B1DA1]/30 hover:text-white border border-white/[0.06] hover:border-[#A11DA0]/50 shadow-sm hover:shadow-[0_0_15px_rgba(161,29,160,0.35)] transition-all duration-300 whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -55,38 +55,38 @@ export const Navbar = () => {
         </nav>
 
         {/* Botón CTA en Escritorio */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block shrink-0">
           <a
-            href="https://wa.me/5213300000000?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20cotizar%20mi%20p%C3%A1gina%20web."
+            href="https://wa.me/523327825329?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20cotizar%20mi%20p%C3%A1gina%20web."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-[#761DA1] to-[#4B1DA1] hover:shadow-[0_0_20px_rgba(161,29,160,0.6)] border border-white/15 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-[#A11DA0] via-[#761DA1] to-[#4B1DA1] hover:shadow-[0_0_22px_rgba(161,29,160,0.7)] hover:scale-[1.03] border border-white/20 transition-all duration-300 whitespace-nowrap"
           >
             <span>Agendar Proyecto</span>
             <ArrowRight size={14} />
           </a>
         </div>
 
-        {/* Botón Hamburguesa para Celular */}
+        {/* Botón Hamburguesa para Celular y Tablet */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-white/5 border border-white/15 text-white"
+          className="lg:hidden p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white transition-colors"
           aria-label="Abrir menú"
         >
           {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Menú Desplegable en Celular */}
+      {/* Menú Desplegable en Celular en forma de botoncitos */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0b071a]/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 space-y-4">
-          <nav className="flex flex-col space-y-3">
+        <div className="lg:hidden bg-[#0b071a]/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 space-y-5 shadow-2xl">
+          <nav className="flex flex-col gap-2.5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base text-gray-200 hover:text-[#A11DA0] py-1.5 border-b border-white/5 transition-colors"
+                className="px-4 py-3 rounded-xl text-sm font-medium text-gray-200 bg-white/[0.04] hover:bg-[#A11DA0]/20 hover:text-white border border-white/10 hover:border-[#A11DA0]/50 transition-all duration-200"
               >
                 {link.name}
               </a>
@@ -94,11 +94,11 @@ export const Navbar = () => {
           </nav>
 
           <a
-            href="https://wa.me/5213300000000?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20cotizar%20mi%20p%C3%A1gina%20web."
+            href="https://wa.me/523327825329?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20cotizar%20mi%20p%C3%A1gina%20web."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#A11DA0] via-[#761DA1] to-[#4B1DA1]"
+            className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#A11DA0] via-[#761DA1] to-[#4B1DA1] border border-white/20 shadow-[0_0_20px_rgba(161,29,160,0.45)]"
           >
             <span>Cotiza tu página por WhatsApp</span>
             <ArrowRight size={16} />
@@ -108,3 +108,5 @@ export const Navbar = () => {
     </header>
   );
 };
+
+export default Navbar;

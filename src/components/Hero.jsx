@@ -52,7 +52,7 @@ export const Hero = () => {
           {/* Llamados a la Acción (CTA) */}
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
             <a
-              href="https://wa.me/5213300000000?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20agendar%20un%20proyecto%20para%20mi%20p%C3%A1gina%20web."
+              href="https://wa.me/523327825329?text=Hola%20Noemi%2C%20me%20gustar%C3%ADa%20agendar%20un%20proyecto%20para%20mi%20p%C3%A1gina%20web."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-[#761DA1] via-[#4B1DA1] to-[#1D44A1] hover:shadow-[0_0_30px_rgba(118,29,161,0.5)] transition-all duration-300 transform hover:-translate-y-0.5"

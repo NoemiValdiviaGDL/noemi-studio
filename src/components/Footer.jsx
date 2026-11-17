@@ -53,7 +53,7 @@ export const Footer = () => {
 
           <div className="pt-2">
             <a
-              href="https://wa.me/5213300000000?text=Hola%20Noemi%2C%20quiero%20iniciar%20mi%20p%C3%A1gina%20web%20contigo."
+              href="https://wa.me/523327825329?text=Hola%20Noemi%2C%20quiero%20iniciar%20mi%20p%C3%A1gina%20web%20contigo."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#A11DA0] via-[#761DA1] to-[#4B1DA1] hover:shadow-[0_0_35px_rgba(161,29,160,0.6)] transition-all duration-300 transform hover:-translate-y-0.5"
